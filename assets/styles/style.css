@@ -84,7 +84,7 @@ img {
 /*=============== REUSABLE CSS CLASSES ===============*/
 .container {
   max-width: 1120px;
-  margin: 0 auto; /* Center the container horizontally */
+  margin: 0 auto;
 }
 
 .main {
@@ -146,41 +146,38 @@ img {
   align-items: center;
 }
 
-.left-side {
+.content-left-side {
   flex: 1;
   padding: 20px;
   margin: 1cm 0;
   padding-top: 2cm;
-  /* Other styles for left side content */
 }
 
-.left-side h1 {
-  font-size: 2.7rem; /* Set the font size of the h1 text to 0.5 times the base font size */
+.content-left-side h1 {
+  font-size: 2.7rem;
   color: rgb(29, 28, 28);
   margin-bottom: 0.5cm;
 }
 
-.left-side p {
+.content-left-side p {
   color: rgb(29, 28, 28);
   margin-bottom: 0.9cm;
 }
 
-.right-side {
+.content-right-side {
   flex: 1;
   display: flex;
   justify-content: flex-end;
   align-items: flex-start;
-  margin-top: 2.5cm;
-
-  /* Other styles for right side content */
+  margin-top: 3cm;
+  margin-bottom: 1cm;
 }
 
-.right-side img {
+.content-right-side img {
   height: 500px;
   width: 450px;
   border-radius: 6px;
   padding-top: 20px;
-  /* Other styles for the image */
 }
 
 .button {
@@ -196,9 +193,9 @@ img {
   font-weight: 500;
   margin: 4px 9px;
   cursor: pointer;
-  width: 250px; /* Set the width of the div element to 300 pixels */
+  width: 250px;
   height: 50px;
-  margin-top: 0.3cm; /* Set the width of the div element to 300 pixels */
+  margin-top: 0.3cm;
 }
 
 /* Navigation for mobile devices */
@@ -228,46 +225,142 @@ img {
   transition: color 0.4s;
 }
 
+/*=========== About Us =================*/
+
+.aboutUs-container {
+  color: black;
+  background-color: rgb(255, 255, 255);
+  padding: 10px;
+}
+
+.aboutUs-right-side {
+  flex: 1;
+  padding: 20px;
+  margin: 1cm 0;
+  padding-top: 2cm;
+}
+
+.aboutUs-right-side h1 {
+  font-size: 2.7rem;
+  color: rgb(29, 28, 28);
+  margin-bottom: 0.5cm;
+}
+
+.aboutUs-right-side p {
+  color: rgb(29, 28, 28);
+  margin-bottom: 0.9cm;
+}
+
+.aboutUs-left-side {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  margin-top: 3cm;
+  margin-bottom: 1cm;
+
+  margin-right: 2rem;
+  width: calc(50% - 1rem);
+}
+
+.aboutUs-left-side img {
+  width: 100%;
+  border-radius: 6px;
+  padding-top: 20px;
+}
+
+.aboutUs-container h1 {
+  margin-bottom: 20px;
+}
+
+.mission {
+  margin-top: 20px;
+}
+
+.mission h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.mission p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.vision-values {
+  display: flex;
+  margin-top: 20px;
+}
+
+.vision,
+.values {
+  display: flex;
+  align-items: center;
+}
+
+.square-block {
+  width: 100px;
+  height: 40px;
+  background-color: #1a2d7a;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.square-block span {
+  display: block;
+}
+
+.vision h3,
+.values h3 {
+  margin-bottom: 10px;
+}
+
+.vision-content,
+.values-content {
+  margin-left: 20px;
+  margin-top: 140px;
+}
+
 /*=============== Services ===============*/
 
 .service-container {
-  background-image: url('assets/img/Logo.png');
+  /*background-image: url("../img/blob.jpg");*/
   background-size: cover;
   background-position: center;
-  color: white;
+  color: rgb(255, 255, 255);
   padding: 70px;
   background-color: #161e3a;
-   /* Set the margin-top and margin-bottom of the section element to 2rem */
-   margin-top: 2rem;
-   margin-bottom: 2rem;
-   /* Set the opacity of the element to 0.75 */
- 
-   
+  position: relative;
 }
 
-.service-container h1{
+.service-container h1 {
   font-size: 2.5rem;
   padding-left: 1rem;
 }
 
 .services {
- display: flex;
- justify-content: space-around;
+  display: flex;
+  justify-content: space-around;
 }
 
 .service-card {
- width: calc(33.333% - (50px /3));
- padding:20px; 
- border-radius :10px; 
- margin-top :20px; 
- background-color :#1A2D7A;
- border: #687194 solid 1px;
+  width: calc(33.333% - (50px / 3));
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+  background-color: #1a2d7a;
+  border: #687194 solid 1px;
 }
 
 .medical-care h2,
 .dietary-services h2,
 .recreational-activities h2 {
- color:white; 
+  color: white;
 }
 
 /*=============== DIFFERENT DEVICES ===============*/
