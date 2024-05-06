@@ -397,6 +397,113 @@ img {
   margin-bottom: 30px;
 }
 
+/*=============== Testimonial ===============*/
+
+.testimonial-container {
+  background-color: #687194;
+  background-size: cover;
+  background-position: center;
+  color: rgb(255, 255, 255);
+  padding: 70px;
+  background-color:#1A2D7A;
+  position: relative;
+}
+
+
+.testimonial-container h1 {
+  font-size: 2.5rem;
+  padding-left: 1rem;
+}
+
+.testimonial p{
+  border-left: 3px solid #1A2D7A;
+  margin-bottom: 20px; /* Adjust the bottom margin to increase space between paragraphs */
+  padding: 15px; /* Adjust padding for space inside the paragraph box */
+}
+
+
+.testimonial{
+  display: flex;
+  justify-content: space-around;
+}
+
+.testimonial-card {
+  width: calc(33.333% - (50px / 3));
+  padding: 20px;
+  border-radius: 5px;
+  margin-top: 20px;
+  background-color: #162769;
+  border: #3e508f solid 0.5px;
+}
+
+.family-testimony h2,
+.resident-feedback h2{
+  color: white;
+}
+
+
+/*=============== Contact Us ===============*/
+.contact-section {
+  background-color: #1A2D7A; /* Dark blue background */
+  color: white;
+  padding: 80px;
+  text-align: left;
+}
+.contact-section h1 {
+  margin: 0;
+  font-size: 2.7rem;
+}
+.contact-section p {
+  margin: 15px 0;
+  font-size: 0.9rem;
+}
+.contact-info {
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  
+}
+
+.contact-info p:first-child {
+  width: 30%;
+}
+
+.contact-info p:nth-child(2) {
+  width: 40%;
+}
+
+.contact-info p:last-child {
+  width: 30%;
+}
+
+
+/*Icons for contact us*/
+
+.contact-info p::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.contact-info p:first-child::before {
+  background-image: url("../img/tel_img.png");
+}
+
+.contact-info p:nth-child(2)::before {
+  background-image: url("../img/email_img.png");
+}
+
+.contact-info p:last-child::before {
+  background-image: url("../img/location_img.png");
+}
+
+
+
 /*=============== DIFFERENT DEVICES ===============*/
 /* For large devices */
 @media screen and (min-width: 1023px) {
