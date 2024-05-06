@@ -128,7 +128,7 @@ img {
 
 .nav__logo img {
   max-width: 100%;
-  height: 80px;
+  height: 70px;
   width: auto;
   display: block;
 }
@@ -329,7 +329,7 @@ img {
 /*=============== Services ===============*/
 
 .service-container {
-  /*background-image: url("../img/blob.jpg");*/
+  /*background-image: url("../img/Services_bg.png");*/
   background-size: cover;
   background-position: center;
   color: rgb(255, 255, 255);
