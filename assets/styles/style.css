@@ -329,7 +329,7 @@ img {
 /*=============== Services ===============*/
 
 .service-container {
-  /*background-image: url("../img/Services_bg.png");*/
+  background-image: url("../img/Services_bg.png");
   background-size: cover;
   background-position: center;
   color: rgb(255, 255, 255);
