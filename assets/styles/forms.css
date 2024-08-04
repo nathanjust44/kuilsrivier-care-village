@@ -1,0 +1,438 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  --header-height: 3.5rem;
+
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  --first-color: hsl(224.4, 78.3%, 27.1%);
+  --title-color: hsl(230, 75%, 15%);
+  --text-color: hsl(230, 12%, 40%);
+  --body-color: hsl(230, 100%, 98%);
+  --container-color: hsl(230, 100%, 97%);
+  --border-color: hsl(230, 25%, 80%);
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: "Syne", sans-serif;
+  --h2-font-size: 1.25rem;
+  --normal-font-size: 0.938rem;
+
+  /*========== Font weight ==========*/
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semi-bold: 600;
+
+  /*========== z index ==========*/
+  --z-fixed: 100;
+  --z-modal: 1000;
+}
+
+/*========== Responsive typography ==========*/
+@media screen and (min-width: 1023px) {
+  :root {
+    --h2-font-size: 1.5rem;
+    --normal-font-size: 1rem;
+  }
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins";
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body,
+input,
+button {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+}
+
+body {
+  background-color: rgb(255, 253, 254);
+  color: var(--text-color);
+}
+
+input,
+button {
+  border: none;
+  outline: none;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.main {
+  position: relative;
+}
+
+.main_forms_bg {
+  background-image: url("../img/bg_forms.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  min-height: 70vh;
+  position: relative;
+}
+
+/*=============== HEADER & NAV ===============*/
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--body-color);
+  box-shadow: 0 2px 16px hsla(230, 75%, 32%, 0.15);
+  z-index: var(--z-fixed);
+}
+
+.nav {
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav__logo {
+  color: var(--title-color);
+  font-weight: var(--font-semi-bold);
+  transition: color 0.4s;
+}
+
+.nav__logo img {
+  max-width: 100%;
+  height: 70px;
+  width: auto;
+  display: block;
+}
+
+:is(.nav__logo, .nav__search, .nav__login, .nav__toggle, .nav__link):hover {
+  color: var(--first-color);
+}
+
+/*============= MAIN CONTENT ===========*/
+.content {
+  font-family: "Poppins", "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+    sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content-centered {
+  flex: 1;
+  padding: 20px;
+  margin: 1cm 0;
+  padding-top: 2cm;
+}
+
+.content-centered h1 {
+  font-size: 3rem;
+  color: rgb(255, 255, 255);
+  margin-top: 1.5cm;
+  margin-bottom: 0.5cm;
+  text-align: center;
+}
+
+.content-centered p {
+  color: rgb(255, 255, 255);
+  margin-bottom: 0.9cm;
+  text-align: center;
+}
+
+/* Navigation for mobile devices */
+@media screen and (max-width: 1023px) {
+  .nav__menu {
+    position: fixed;
+    top: -100%;
+    left: 0;
+    background-color: var(--body-color);
+    box-shadow: 0 8px 16px hsla(230, 75%, 32%, 0.15);
+    width: 100%;
+    padding-block: 4.5rem 4rem;
+    transition: top 0.4s;
+  }
+}
+
+.nav__list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2.5rem;
+  text-align: center;
+}
+
+.nav__link {
+  color: var(--title-color);
+  font-weight: var(--font-semi-bold);
+  transition: color 0.4s;
+}
+
+/*============= MAIN CONTENT ===========*/
+.main-content {
+  padding: 30px;
+  background-color: white;
+}
+
+.main-content h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: black;
+  text-align: center;
+}
+
+.main-content p {
+  font-size: 1rem;
+  color: black;
+  margin-bottom: 30px;
+}
+
+/*=============== Criteria ===============*/
+.criteria h2 {
+  font-size: 2em;
+  margin-bottom: 2ch;
+  margin-top: 2rem;
+}
+
+.criteria ul {
+  list-style-type: disc;
+  padding-left: 60px;
+}
+
+.criteria li {
+  margin-bottom: 10px;
+  line-height: 1.6;
+  color: black;
+}
+
+.criteria li strong {
+  color: #000;
+}
+
+/*=============== Table ===============*/
+.table h1 {
+  text-align: center;
+  margin-top: 50px;
+  color: black;
+}
+
+.table table {
+  margin: 50px auto;
+  width: 70%;
+  border-collapse: collapse;
+}
+
+.table td {
+  padding: 15px;
+  border: 1px solid #ddd;
+  color: black;
+}
+
+.table th {
+  padding: 15px;
+  text-align: left;
+  background-color: #d3dcf6;
+  border: 1px solid #ddd;
+  color: black;
+}
+
+/*=============== Contact Us ===============*/
+.contact-section {
+  background-color: #1a2d7a; /* Dark blue background */
+  color: white;
+  padding: 80px;
+  text-align: left;
+}
+.contact-section h1 {
+  margin: 0;
+  font-size: 2.7rem;
+}
+.contact-section p {
+  margin: 15px 0;
+  font-size: 0.9rem;
+}
+.contact-info {
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.contact-info p:first-child {
+  width: 30%;
+}
+
+.contact-info p:nth-child(2) {
+  width: 40%;
+}
+
+.contact-info p:last-child {
+  width: 30%;
+}
+
+/*Icons for contact us*/
+
+.contact-info p::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.contact-info p:first-child::before {
+  background-image: url("../img/tel_img.png");
+}
+
+.contact-info p:nth-child(2)::before {
+  background-image: url("../img/email_img.png");
+}
+
+.contact-info p:last-child::before {
+  background-image: url("../img/location_img.png");
+}
+
+/*=============== DIFFERENT DEVICES ===============*/
+/* For large devices */
+@media screen and (min-width: 1023px) {
+  .nav {
+    height: calc(var(--header-height) + 2rem);
+    column-gap: 3rem;
+  }
+  .nav__menu {
+    margin-left: auto;
+  }
+  .nav__list {
+    flex-direction: row;
+    column-gap: 3rem;
+  }
+}
+
+@media screen and (min-width: 1150px) {
+  .container {
+    margin-inline: auto;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .contact-form .form-group {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .contact-form .form-group input[type="text"] {
+    flex: 1 1 100%;
+  }
+}
+
+/*=============== Forms ===============*/
+.admission-forms-section {
+  background-color: #d3dcf6;
+  color: white;
+  padding: 80px;
+  text-align: left;
+}
+
+.admission-forms-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #000000; /* Black text color */
+}
+
+.form-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.form-card {
+  flex: 1;
+  min-width: 250px;
+  max-width: 300px;
+  padding: 20px;
+  border: 1px solid #ccc; /* Light border */
+  border-radius: 8px;
+  background-color: #fff; /* White background for the card */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-card .material-icons {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #000; /* Black icons */
+}
+
+.form-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #000; /* Black text color */
+}
+
+.form-card p {
+  font-size: 0.875rem;
+  margin-bottom: 20px;
+  color: #000; /* Black text color */
+}
+
+.form-card .button-container {
+  display: flex;
+  justify-content: center; /* Center buttons horizontally */
+  gap: 20px; /* Add spacing between buttons */
+}
+
+.form-card button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--first-color); /* Black background for buttons */
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-card button:hover {
+  background-color: white;
+  color: var(--first-color);
+  border: 1px solid var(--first-color);
+}
+
+.form-card button.outline {
+  background-color: transparent;
+  color: var(--first-color);
+  border: 1px solid var(--first-color);
+}
+
+.form-card button.outline:hover {
+  background-color: var(
+    --first-color
+  ); /* Black background for outline buttons on hover */
+  color: white;
+}
