@@ -164,6 +164,7 @@ a:is(:hover, :focus) figcaption {
     display: flex;
     justify-content: center;
     gap: 20px;
+    padding-bottom: 1cm;
 }
 
 .events img {
