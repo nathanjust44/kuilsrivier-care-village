@@ -1,3 +1,7 @@
+/*Authors:Erinn Mouton, Nathan Just*/
+/*Date: 7 September 2024*/
+/*Description: This CSS file styles contains the layout and visual design of a website's home page, news feed, events, and volunteer sections. */
+
 * {
     margin: 0;
     padding: 0;
@@ -149,4 +153,16 @@ body {
   .meal-delivery-drivers h2,
   .gardening-helpers h2 {
     color: white;
+  }
+
+  /*================Footer====================*/
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-family: "Poppins", "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+      sans-serif;
+      font-size: 0.8rem;
   }
