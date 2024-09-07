@@ -556,6 +556,19 @@ img {
 }
 
 
+/*================Footer====================*/
+
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-family: "Poppins", "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+    sans-serif;
+    font-size: 0.8rem;
+}
+
+
 
 /*=============== DIFFERENT DEVICES ===============*/
 /* For large devices */
@@ -578,3 +591,4 @@ img {
     margin-inline: auto;
   }
 }
+
