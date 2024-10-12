@@ -2,7 +2,6 @@
 /*Date: 7 September 2024*/
 /*Description: This page includes styles for the header, navigation menu, main content, criteria section, table, contact section, and footer*/
 
-
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 /*=============== VARIABLES CSS ===============*/
@@ -410,24 +409,22 @@ img {
   background-position: center;
   color: rgb(255, 255, 255);
   padding: 70px;
-  background-color:#1A2D7A;
+  background-color: #1a2d7a;
   position: relative;
 }
-
 
 .testimonial-container h1 {
   font-size: 2.5rem;
   padding-left: 1rem;
 }
 
-.testimonial p{
-  border-left: 3px solid #1A2D7A;
+.testimonial p {
+  border-left: 3px solid #1a2d7a;
   margin-bottom: 20px; /* Adjust the bottom margin to increase space between paragraphs */
   padding: 15px; /* Adjust padding for space inside the paragraph box */
 }
 
-
-.testimonial{
+.testimonial {
   display: flex;
   justify-content: space-around;
 }
@@ -442,7 +439,7 @@ img {
 }
 
 .family-testimony h2,
-.resident-feedback h2{
+.resident-feedback h2 {
   color: white;
 }
 
@@ -471,6 +468,7 @@ img {
 }
 
 .faq-question {
+  width: 700px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -480,6 +478,8 @@ img {
 }
 
 .faq-answer {
+  width: 700px;
+  text-align: left;
   padding-top: 0;
   max-height: 0;
   overflow: hidden;
@@ -502,7 +502,7 @@ img {
 
 /*=============== Contact Us ===============*/
 .contact-section {
-  background-color: #1A2D7A; /* Dark blue background */
+  background-color: #1a2d7a; /* Dark blue background */
   color: white;
   padding: 80px;
   text-align: left;
@@ -519,7 +519,6 @@ img {
   margin: 10px 0;
   display: flex;
   justify-content: space-between;
-  
 }
 
 .contact-info p:first-child {
@@ -533,7 +532,6 @@ img {
 .contact-info p:last-child {
   width: 30%;
 }
-
 
 /*Icons for contact us*/
 
@@ -560,7 +558,6 @@ img {
   background-image: url("../img/location_img.png");
 }
 
-
 /*================Footer====================*/
 
 footer {
@@ -570,10 +567,8 @@ footer {
   padding: 20px;
   font-family: "Poppins", "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
     sans-serif;
-    font-size: 0.8rem;
+  font-size: 0.8rem;
 }
-
-
 
 /*=============== DIFFERENT DEVICES ===============*/
 /* For large devices */
@@ -596,4 +591,3 @@ footer {
     margin-inline: auto;
   }
 }
-
