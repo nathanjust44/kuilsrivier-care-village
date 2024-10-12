@@ -3,166 +3,167 @@
 /*Description: This CSS file styles contains the layout and visual design of a website's home page, news feed, events, and volunteer sections. */
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
     sans-serif;
 }
 
 body {
-    background-color: #f4f4f4;
-    color: #333;
-    line-height: 1.6;
+  background-color: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
 }
-
 
 /*=============== NewsFeed  ===============*/
 
 .news-feed {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-    margin-bottom: 2cm;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  margin-bottom: 2cm;
 }
 
 .news-feed h1 {
-    font-size: 2rem;
-    margin-bottom: 20px;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #000;
 }
 
 .news-cards {
-    display: flex;
-    gap: 20px;
-    justify-content: space-between;
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
 }
 
 .news-card {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    text-decoration: none;
-    color: inherit;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .news-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
 }
 
 .news-card-content {
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background-color: #003366;
-    color: white;
-    flex-grow: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #003366;
+  color: white;
+  flex-grow: 1;
 }
 
 .news-card-content h2 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
 }
 
 .news-card-content p {
-    flex-grow: 1;
+  flex-grow: 1;
 }
 
 .author {
-    margin-top: 10px;
-    font-size: 0.875rem;
-    color: #ccc;
+  margin-top: 10px;
+  font-size: 0.875rem;
+  color: #ccc;
 }
 
 /*=============== Events  ===============*/
 .events-section {
-    padding: 20px;
-    background-color: #D3DCF6;
-    margin-bottom: 20px;
-    text-align: left;
+  padding: 20px;
+  background-color: #d3dcf6;
+  margin-bottom: 0px;
+  text-align: left;
 }
 
 .events-section h1 {
-    text-align:center;
-    font-size: 2rem;
-    margin-bottom: 20px;
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #000;
 }
 
 .events {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
 .event {
-    background-color: #fff;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    width: 330px;
-    box-sizing: border-box;
-    margin-bottom: 1cm;
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  width: 330px;
+  box-sizing: border-box;
+  margin-bottom: 1cm;
 }
 
 .event h3 {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #000;
 }
 
 /*=============== Volunteer  ===============*/
 
 .volunteer-container {
-    background-image: url("../img/volunteering.png");
-    background-size: cover;
-    background-position: center;
-    color: rgb(255, 255, 255);
-    padding: 90px;
-    background-color: #161e3a;
-    position: relative;
+  background-image: url("../img/volunteering.png");
+  background-size: cover;
+  background-position: center;
+  color: rgb(255, 255, 255);
+  padding: 90px;
+  background-color: #161e3a;
+  position: relative;
+  margin-top: 0;
+}
 
-  }
-  
-  
-  .volunteer-container h1 {
-    font-size: 2.5rem;
-    padding-left: 1rem;
-  }
-  
-  .volunteers {
-    display: flex;
-    justify-content: space-around;
-  }
-  
-  .volunteer-card  {
-    width: calc(33.333% - (50px / 3));
-    padding: 20px;
-    border-radius: 10px;
-    margin-top: 20px;
-    background-color: #1a2d7a;
-    border: #687194 solid 1px;
-  }
-  
-  .activity-assistants h2,
-  .meal-delivery-drivers h2,
-  .gardening-helpers h2 {
-    color: white;
-  }
+.volunteer-container h1 {
+  font-size: 2.5rem;
+  padding-left: 1rem;
+}
 
-  /*================Footer====================*/
+.volunteers {
+  display: flex;
+  justify-content: space-around;
+}
+
+.volunteer-card {
+  width: calc(33.333% - (50px / 3));
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+  background-color: #1a2d7a;
+  border: #687194 solid 1px;
+}
+
+.activity-assistants h2,
+.meal-delivery-drivers h2,
+.gardening-helpers h2 {
+  color: white;
+}
+
+/*================Footer====================*/
 
 footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    font-family: "Poppins", "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-      sans-serif;
-      font-size: 0.8rem;
-  }
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-family: "Poppins", "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+    sans-serif;
+  font-size: 0.8rem;
+}
