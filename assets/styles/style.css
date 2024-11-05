@@ -9,7 +9,6 @@
   --header-height: 3.5rem;
 
   /*========== Colors ==========*/
-  /*Color mode HSL(hue, saturation, lightness)*/
   --first-color: hsl(224.4, 78.3%, 27.1%);
   --title-color: hsl(230, 75%, 15%);
   --text-color: hsl(230, 12%, 40%);
@@ -18,7 +17,6 @@
   --border-color: hsl(230, 25%, 80%);
 
   /*========== Font and typography ==========*/
-  /*.5rem = 8px | 1rem = 16px ...*/
   --body-font: "Syne", sans-serif;
   --h2-font-size: 1.25rem;
   --normal-font-size: 0.938rem;
@@ -122,29 +120,137 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0 1rem; /* Add some horizontal padding */
 }
 
 .nav__logo {
   color: var(--title-color);
   font-weight: var(--font-semi-bold);
   transition: color 0.4s;
+  position: absolute; /* Fix the logo to a specific position */
+  left: 1rem; /* Align the logo to the left */
+  height: auto; /* Maintain original logo height on larger screens */
 }
 
 .nav__logo img {
-  max-width: 100%;
-  height: 70px;
+  max-width: 100%; /* Allow logo to scale */
+  height: auto; /* Maintain aspect ratio */
+  max-height: 70px; /* Set a maximum height for the logo on larger screens */
   width: auto;
   display: block;
+}
+
+/* Change logo size on smaller devices */
+@media screen and (max-width: 768px) {
+  .nav__logo img {
+    max-height: 50px; /* Adjust logo height on smaller devices */
+  }
 }
 
 :is(.nav__logo, .nav__search, .nav__login, .nav__toggle, .nav__link):hover {
   color: var(--first-color);
 }
 
+/* Navigation for mobile devices */
+@media screen and (max-width: 1023px) {
+  .nav__menu {
+    position: fixed;
+    top: -100%;
+    left: 0;
+    background-color: var(--body-color);
+    box-shadow: 0 8px 16px hsla(230, 75%, 32%, 0.15);
+    width: 100%;
+    padding-block: 4.5rem 4rem;
+    transition: top 0.4s;
+  }
+
+  .nav__menu.active {
+    top: 0; /* Move menu down when active */
+  }
+
+  .nav__toggle {
+    display: flex; /* Show toggle button on smaller devices */
+    position: absolute; /* Position toggle button */
+    right: 1rem; /* Align to the right */
+    top: 1rem; /* Distance from the top */
+  }
+}
+
+.nav__list {
+  display: flex; /* Default to row for larger screens */
+  flex-direction: row; /* Default to row for larger screens */
+  gap: 2rem; /* Space between items */
+}
+
+/* Show the menu when active */
+.nav__menu.active {
+  display: flex; /* Show flex items */
+  flex-direction: column; /* Stack items vertically */
+  row-gap: 1rem; /* Space between items */
+  padding: 1rem 0; /* Padding around the menu */
+}
+
+.nav__link {
+  color: var(--title-color);
+  font-weight: var(--font-semi-bold);
+  transition: color 0.4s;
+}
+
+/* Toggle Button Styles */
+.nav__toggle {
+  cursor: pointer; /* Cursor changes to pointer */
+  display: none; /* Hide toggle button by default */
+}
+
+.toggle-icon {
+  font-size: 24px; /* Icon size */
+  transition: opacity 0.3s; /* Transition for smooth appearance */
+}
+
+.close-icon {
+  display: none; /* Hide close icon initially */
+}
+
+/* Show close icon when menu is active */
+.nav__menu.active + .nav__toggle .toggle-icon {
+  display: none; /* Hide the hamburger icon */
+}
+
+.nav__menu.active + .nav__toggle .close-icon {
+  display: block; /* Show the close icon */
+}
+
+/* Media query to ensure the nav menu stacks vertically */
+@media screen and (max-width: 1023px) {
+  .nav__list {
+    display: flex; /* Set display to flex */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items */
+    row-gap: 1rem; /* Space between items */
+  }
+
+  .nav__toggle {
+    display: flex; /* Show toggle button on smaller devices */
+  }
+
+  .nav__logo {
+    position: fixed; /* Keep logo fixed on the left */
+    left: 1rem; /* Ensure it stays in view */
+    top: 1rem; /* Distance from the top */
+  }
+}
+
+/* Responsive size adjustments */
+@media screen and (max-width: 768px) {
+  .nav {
+    padding: 0 0.5rem; /* Reduce padding on smaller screens */
+  }
+}
+
+
 /*============= MAIN CONTENT ===========*/
 .content {
-  font-family: "Poppins", "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-    sans-serif;
+  font-family: "Poppins", "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -155,6 +261,7 @@ img {
   padding: 20px;
   margin: 1cm 0;
   padding-top: 2cm;
+  text-align: left; /* Default alignment for larger screens */
 }
 
 .content-left-side h1 {
@@ -169,7 +276,6 @@ img {
 }
 
 .content-right-side {
-  flex: 1;
   display: flex;
   justify-content: flex-end;
   align-items: flex-start;
@@ -195,53 +301,89 @@ img {
   display: block;
   font-size: 16px;
   font-weight: 500;
-  margin: 4px 9px;
+  margin: 4px 9px; /* Horizontal spacing for larger screens */
   cursor: pointer;
-  width: 250px;
-  height: 50px;
+  width: 250px; /* Fixed width for buttons */
+}
+
+/* Button container for better layout */
+.button-container {
+  display: flex;
+  flex-direction: column; /* Default to horizontal for larger screens */
+  justify-content: flex-start; /* Align buttons to the left */
   margin-top: 0.3cm;
 }
 
-/* Navigation for mobile devices */
-@media screen and (max-width: 1023px) {
-  .nav__menu {
-    position: fixed;
-    top: -100%;
-    left: 0;
-    background-color: var(--body-color);
-    box-shadow: 0 8px 16px hsla(230, 75%, 32%, 0.15);
-    width: 100%;
-    padding-block: 4.5rem 4rem;
-    transition: top 0.4s;
+/* Media query for smaller devices */
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center content */
+    text-align: center; /* Center text */
+  }
+
+  .content-left-side {
+    margin: 0; /* Reset margin for better alignment */
+  }
+
+  .content-right-side {
+    display: none; /* Hide image on smaller devices */
+  }
+
+  .content-left-side h1 {
+    font-size: 2rem; /* Smaller font size for smaller screens */
+  }
+
+  .content-left-side p {
+    font-size: 0.9rem; /* Adjust font size */
+  }
+
+  /* Adjust button container and button styles */
+  .button-container {
+    flex-direction: column; /* Stack buttons vertically on small screens */
+    align-items: center; /* Center align buttons */
+    width: 100%; /* Full width on small screens */
+  }
+
+  .button {
+    width: 100%; /* Full width buttons on small screens */
+    max-width: 250px; /* Set max width for buttons */
+    margin: 4px 0; /* Vertical margin only for spacing */
   }
 }
 
-.nav__list {
-  display: flex;
-  flex-direction: column;
-  row-gap: 2.5rem;
-  text-align: center;
+/* Media query for even smaller devices */
+@media (max-width: 480px) {
+  .content-left-side h1 {
+    font-size: 2rem; /* Smaller font size for even smaller screens */
+  }
+
+  .content-left-side p {
+    font-size: 0.9rem; /* Adjust font size */
+  }
 }
 
-.nav__link {
-  color: var(--title-color);
-  font-weight: var(--font-semi-bold);
-  transition: color 0.4s;
-}
+
+
+
+
 
 /*=========== About Us =================*/
-
 .aboutUs-container {
   color: black;
   background-color: rgb(255, 255, 255);
-  padding: 10px;
+  padding: 20px;
+  box-sizing: border-box; /* Ensure padding is included in total width */
 }
 
+.container {
+  display: flex;
+  flex-direction: column; /* Default to column layout */
+}
+
+/* Right Side Styles */
 .aboutUs-right-side {
-  flex: 1;
   padding: 20px;
-  margin: 1cm 0;
-  padding-top: 2cm;
 }
 
 .aboutUs-right-side h1 {
@@ -256,27 +398,20 @@ img {
 }
 
 .aboutUs-left-side {
-  flex: 1;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: flex-start;
-  margin-top: 3cm;
-  margin-bottom: 1cm;
-
-  margin-right: 2rem;
-  width: calc(50% - 1rem);
+  margin: 20px 0; /* Adjust margin for better spacing */
 }
 
+/* Image Styles */
 .aboutUs-left-side img {
   width: 100%;
+  max-width: 1000px; /* Increased max width for a larger image */
   border-radius: 6px;
-  padding-top: 20px;
 }
 
-.aboutUs-container h1 {
-  margin-bottom: 20px;
-}
-
+/* Mission Section Styles */
 .mission {
   margin-top: 20px;
 }
@@ -291,22 +426,28 @@ img {
   line-height: 1.5;
 }
 
+/* Vision and Values Section */
 .vision-values {
   display: flex;
+  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
   margin-top: 20px;
+  justify-content: space-between; /* Space out vision and values */
 }
 
 .vision,
 .values {
   display: flex;
   align-items: center;
+  flex: 1; /* Allow equal distribution */
+  margin: 10px; /* Margin around each item */
 }
 
+/* Square Block Styles */
 .square-block {
-  width: 100px;
-  height: 40px;
+  width: 50px; /* Set width */
+  height: 50px; /* Set height */
   background-color: #1a2d7a;
-  border-radius: 6px;
+  border-radius: 6px; /* Default border-radius */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -319,60 +460,129 @@ img {
   display: block;
 }
 
+/* Heading Styles */
 .vision h3,
 .values h3 {
   margin-bottom: 10px;
 }
 
+/* Content Styles */
 .vision-content,
 .values-content {
-  margin-left: 20px;
-  margin-top: 140px;
+  margin-left: 10px; /* Reduced margin for better spacing */
 }
 
-/*=============== Services ===============*/
+/* Responsive Adjustments */
+@media (min-width: 768px) {
+  .container {
+    flex-direction: row; /* Switch to row layout on larger screens */
+  }
 
+  .aboutUs-left-side {
+    margin-right: 20px; /* Add space between image and text */
+  }
+
+  .vision-content,
+  .values-content {
+    margin-top: 0; /* Reset margin-top for larger screens */
+  }
+}
+
+/* Adjustments for Smaller Devices */
+@media (max-width: 767px) {
+  .square-block {
+    width: 50px; /* Keep width the same */
+    height: 50px; /* Keep height the same */
+    border-radius: 80%; /* Make it circular */
+  }
+
+  /* Optional: Ensure that the vision and values sections can handle the circular blocks */
+  .vision,
+  .values {
+    flex-basis: 100%; /* Allow them to take full width */
+    justify-content: center; /* Center content within the flex items */
+  }
+}
+
+
+
+/*=============== Services ===============*/
 .service-container {
   background-image: url("../img/Services_bg.png");
   background-size: cover;
   background-position: center;
-  color: rgb(255, 255, 255);
+  color: #ffffff;
   padding: 70px;
   background-color: #161e3a;
   position: relative;
+  text-align: center; /* Center align text for better readability */
+  box-sizing: border-box;
 }
 
 .service-container h1 {
   font-size: 2.5rem;
-  padding-left: 1rem;
+  margin-bottom: 30px; /* Space below the heading */
 }
 
 .services {
   display: flex;
-  justify-content: space-around;
+  flex-direction: column; /* Stack cards vertically by default */
+  gap: 20px; /* Space between cards */
 }
 
+/* Service card styling */
 .service-card {
-  width: calc(33.333% - (50px / 3));
+  width: 100%; /* Full width on small screens */
+  max-width: 350px; /* Limit max width for cards */
   padding: 20px;
   border-radius: 10px;
-  margin-top: 20px;
   background-color: #1a2d7a;
   border: #687194 solid 1px;
+  margin: 0 auto; /* Center cards in column layout */
 }
 
+/* Responsive adjustments for medium and larger screens */
+@media (min-width: 768px) {
+  .services {
+    flex-direction: row; /* Change to row layout for larger screens */
+    justify-content: center; /* Center cards in the row */
+    flex-wrap: wrap; /* Allow cards to wrap to the next line */
+  }
+
+  .service-card {
+    width: calc(33.333% - 20px); /* Three cards in a row */
+  }
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 480px) {
+  .service-container {
+    padding: 40px;
+  }
+
+  .service-container h1 {
+    font-size: 2rem;
+  }
+
+  .service-card p {
+    font-size: 0.9rem; /* Adjust font size for paragraphs */
+  }
+}
+
+/* Service card heading styling */
 .medical-care h2,
 .dietary-services h2,
 .recreational-activities h2 {
   color: white;
 }
 
+
 /*==============FACILITIES====================*/
 
 .facilities-container {
-  background-color: white;
+  background-color: #d3dcf6;
   color: black;
-  padding: 50px 0;
+  padding: 50px 20px; /* Added horizontal padding for mobile devices */
   text-align: center;
 }
 
@@ -380,74 +590,114 @@ img {
   display: flex;
   justify-content: center;
   gap: 20px;
+  flex-wrap: wrap; /* Allow wrapping of cards on smaller screens */
 }
 
 .facilities-card {
-  width: calc(50% - 80px);
+  width: calc(50% - 40px); /* Adjust width for responsive spacing */
   padding: 20px;
   display: flex;
+  background-color: white;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for better visual separation */
+  border-radius: 6px; /* Slight rounding for aesthetics */
+  transition: transform 0.3s ease; /* Smooth scaling effect */
 }
+
+
 
 .facilities-card img {
   width: 100%;
   max-width: 500px;
+  height: auto; /* Maintain aspect ratio */
   margin-top: 20px;
+  border-radius: 6px; /* Round the corners of the image */
 }
 
 .facilities-container h1 {
   margin-bottom: 30px;
 }
 
-/*=============== Testimonial ===============*/
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .facilities-card {
+    width: 100%; /* Full width on mobile */
+    margin-bottom: 20px; /* Space between cards on mobile */
+  }
 
+  .facilities-container h1 {
+    font-size: 2rem; /* Reduce title size for smaller screens */
+  }
+}
+
+
+/*=============== Testimonial ===============*/
 .testimonial-container {
-  background-color: #687194;
-  background-size: cover;
-  background-position: center;
-  color: rgb(255, 255, 255);
+  background-color: #1a2d7a; /* Dark blue background */
+  color: #ffffff;
   padding: 70px;
-  background-color: #1a2d7a;
   position: relative;
+  text-align: center; /* Center text for better readability */
+  box-sizing: border-box;
 }
 
 .testimonial-container h1 {
   font-size: 2.5rem;
-  padding-left: 1rem;
-}
-
-.testimonial p {
-  border-left: 3px solid #1a2d7a;
-  margin-bottom: 20px; /* Adjust the bottom margin to increase space between paragraphs */
-  padding: 15px; /* Adjust padding for space inside the paragraph box */
+  margin-bottom: 30px;
 }
 
 .testimonial {
   display: flex;
-  justify-content: space-around;
+  flex-direction: column; /* Stack cards vertically by default */
+  gap: 20px; /* Space between cards */
 }
 
+/* Testimonial card styling */
 .testimonial-card {
-  width: calc(33.333% - (50px / 3));
+  width: 100%;
+  max-width: 350px; /* Limit max width for cards */
   padding: 20px;
   border-radius: 5px;
-  margin-top: 20px;
   background-color: #162769;
   border: #3e508f solid 0.5px;
+  margin: 0 auto; /* Center cards in the column layout */
 }
 
-.family-testimony h2,
-.resident-feedback h2 {
-  color: white;
+/* Responsive adjustments for medium and larger screens */
+@media (min-width: 768px) {
+  .testimonial {
+    flex-direction: row; /* Change to row layout for larger screens */
+    justify-content: center; /* Center cards */
+    flex-wrap: wrap; /* Allow cards to wrap to the next line */
+  }
+
+  .testimonial-card {
+    width: calc(33.333% - 20px); /* Three cards in a row */
+  }
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 480px) {
+  .testimonial-container {
+    padding: 40px;
+  }
+
+  .testimonial-container h1 {
+    font-size: 2rem;
+  }
+
+  .testimonial-card p {
+    font-size: 0.9rem; /* Adjust font size for paragraphs */
+  }
 }
 
 /*================= FAQ ====================*/
 .faq-container {
   background-color: white;
   color: black;
-  padding: 50px 0;
+  padding: 50px 20px; /* Added horizontal padding for smaller screens */
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -455,20 +705,21 @@ img {
 }
 
 .faq-title {
-  font-size: 3rem;
-  margin: 2rem 0rem;
+  font-size: 2.5rem; /* Slightly reduced font size for better fit */
+  margin: 2rem 0;
+  font-family: "Poppins", "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", ;
 }
 
 .faq {
   max-width: 700px;
-  margin-top: 2rem;
+  width: 100%; /* Ensure the FAQ section takes full width */
+  margin-top: 1.5rem; /* Adjusted margin */
   padding-bottom: 1rem;
   border-bottom: 2px solid #000000;
   cursor: pointer;
 }
 
 .faq-question {
-  width: 700px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -478,7 +729,6 @@ img {
 }
 
 .faq-answer {
-  width: 700px;
   text-align: left;
   padding-top: 0;
   max-height: 0;
@@ -489,7 +739,7 @@ img {
 
 .faq.active .faq-answer {
   padding-top: 1rem;
-  max-height: 200px;
+  max-height: 200px; /* Ensure max-height accommodates content */
 }
 
 .arrow {
@@ -500,46 +750,73 @@ img {
   transform: rotate(180deg);
 }
 
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .faq-title {
+    font-size: 2rem; /* Reduce title size for smaller screens */
+  }
+
+  .faq {
+    padding: 10px; /* Reduced padding for smaller screens */
+  }
+
+  .faq-question h3 {
+    font-size: 1.2rem; /* Adjust question size */
+  }
+
+  .faq-answer p {
+    font-size: 1rem; /* Adjust answer size */
+  }
+}
+
+
 /*=============== Contact Us ===============*/
 .contact-section {
   background-color: #1a2d7a; /* Dark blue background */
   color: white;
   padding: 80px;
-  text-align: left;
+  text-align: center;
+  max-width: 100%;
+  box-sizing: border-box;
 }
+
 .contact-section h1 {
   margin: 0;
   font-size: 2.7rem;
 }
+
 .contact-section p {
   margin: 15px 0;
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
+
 .contact-info {
-  margin: 10px 0;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
 }
 
-.contact-info p:first-child {
-  width: 30%;
+/* Contact info layout for larger screens */
+@media (min-width: 768px) {
+  .contact-info {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .contact-info p {
+    width: auto;
+    flex: 1;
+    text-align: left;
+  }
 }
 
-.contact-info p:nth-child(2) {
-  width: 40%;
-}
-
-.contact-info p:last-child {
-  width: 30%;
-}
-
-/*Icons for contact us*/
-
+/* Icons for contact info */
 .contact-info p::before {
   content: "";
   width: 20px;
   height: 20px;
-  margin-right: 5px;
+  margin-right: 10px;
   background-size: contain;
   background-repeat: no-repeat;
   display: inline-block;
@@ -557,6 +834,38 @@ img {
 .contact-info p:last-child::before {
   background-image: url("../img/location_img.png");
 }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .contact-section h1 {
+    font-size: 2rem;
+  }
+
+  .contact-info p {
+    font-size: 1rem;
+    text-align: center;
+    margin: 10px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-section {
+    padding: 40px;
+  }
+
+  .contact-section h1 {
+    font-size: 1.8rem;
+  }
+
+  .contact-section p {
+    font-size: 0.9rem;
+  }
+
+  .contact-info p {
+    font-size: 0.8rem;
+  }
+}
+
 
 /*================Footer====================*/
 
