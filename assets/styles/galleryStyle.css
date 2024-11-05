@@ -2,6 +2,11 @@
 /*Date: 7 September 2024*/
 /*Description: This includes styles for the header, navigation menu, main content, criteria section, table, contact section, and footer*/
 
+
+
+
+
+
 /* Nav Bar */
 .nav__logo img {
   width: auto;
@@ -15,7 +20,7 @@
 figure img {
   width: 100%;
   display: block;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 1 / 1; /* Maintains square aspect ratio */
   object-fit: cover;
   transition: transform 1000ms;
 }
@@ -26,9 +31,15 @@ ul.gallery {
   padding: 0;
   display: grid;
   gap: 0.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive column sizing */
   max-width: 100%;
-  width: 70rem;
+}
+
+/* Adjust for larger screens */
+@media (min-width: 768px) { /* You can adjust the breakpoint as needed */
+  ul.gallery {
+    grid-template-columns: repeat(3, 1fr); /* Three columns on larger screens */
+  }
 }
 
 figure {
@@ -59,7 +70,7 @@ figcaption {
   height: 100%;
   display: flex;
   justify-content: center;
-  place-items: center;
+  align-items: center; /* Centering vertically */
   text-align: center;
   padding: 1rem;
   color: white;
@@ -105,14 +116,17 @@ a:is(:hover, :focus) figcaption {
   }
 }
 
+/* Styling for the content left side */
 .content-left-side {
   flex: 1;
   display: flex;
-  justify-content: flex-end;
-  align-items: flex-start;
+  justify-content: center; /* Centering content horizontally */
+  align-items: flex-start; 
   margin-top: 2cm;
   margin-bottom: 2.7cm;
+  padding: 0 1rem; /* Add padding for better responsiveness */
 }
+
 
 /*============= Facilities Images ===========*/
 .facilities {
@@ -124,26 +138,35 @@ a:is(:hover, :focus) figcaption {
 
 .facilities h1 {
   font-size: 2.5em;
-  color: #000;
   margin-bottom: 1cm;
   margin-top: 1cm;
+  color: #000;
+}
+
+/* Flex container for facilities */
+.facility-container {
+  display: flex; /* Enable flexbox layout */
+  justify-content: space-between; /* Space between cards */
+  flex-wrap: wrap; /* Allow cards to wrap onto next line */
+  margin-top: 20px; /* Space between title and facilities */
 }
 
 .facility {
-  display: inline-block;
-  width: 30%;
-  margin: 10px;
+  flex: 1; /* Allow cards to grow equally */
+  margin: 10px; /* Margin for spacing */
   background-color: #fff;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
-  vertical-align: top;
+  box-sizing: border-box; /* Include padding in width calculation */
+  min-width: 250px; /* Minimum width for responsiveness */
 }
 
 .facility img {
   width: 100%;
-  height: 250px;
-  object-fit: cover;
+  height: auto; /* Maintain aspect ratio */
+  max-height: 250px; /* Limit the height */
+  object-fit: cover; /* Cover the area without distortion */
   border-radius: 8px;
 }
 
@@ -159,8 +182,29 @@ a:is(:hover, :focus) figcaption {
   margin-top: 5px;
 }
 
-/*============= Event Gallery ===========*/
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .facility-container {
+      flex-direction: column; /* Stack vertically on medium screens */
+      align-items: center; /* Center cards */
+  }
 
+  .facility {
+      width: calc(100% - 20px); /* Full width for each card */
+      margin: 10px 0; /* Vertical spacing */
+  }
+}
+
+@media (max-width: 480px) {
+  .facility {
+      width: calc(100% - 20px); /* Ensure full width on small screens */
+  }
+}
+
+
+
+
+/*============= Event Gallery ===========*/
 .events-section {
   padding: 20px;
   text-align: center;
@@ -174,22 +218,193 @@ a:is(:hover, :focus) figcaption {
   color: #000;
 }
 
+/* Slideshow styles */
+.slideshow-container {
+  max-width: 100%; /* Full width */
+  position: relative;
+  margin: auto; /* Centering */
+  display: none; /* Hide by default on larger screens */
+}
+
+.mySlides {
+  display: none; /* Hide all slides by default */
+}
+
+.mySlides img {
+  width: 100%; /* Full width for images */
+  height: 300px; /* Set a fixed height for uniformity */
+  object-fit: cover; /* Maintain aspect ratio while covering the area */
+  border-radius: 5px; /* Optional rounded corners */
+}
+
+/* Slideshow navigation buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute; /* Position relative to the slideshow container */
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  z-index: 1000; /* Ensure the arrows stay on top of the slideshow */
+}
+
+.prev {
+  left: 10px; /* Position on the left side */
+}
+
+.next {
+  right: 10px; /* Position on the right side */
+  border-radius: 3px 0 0 3px;
+}
+
+/* Hover effect for arrows */
+.prev:hover, .next:hover {
+  background-color: rgba(18, 64, 192, 0.8);
+}
+
+/* Styles for the grid layout on larger screens */
 .events {
-  display: flex;
+  display: flex; /* Flexbox layout for the grid */
   justify-content: center;
   gap: 20px;
   padding-bottom: 1cm;
+  flex-wrap: wrap; /* Allow wrapping of images */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .events {
+    display: none; /* Hide the grid on smaller screens */
+  }
+
+  .slideshow-container {
+    display: block; /* Show the slideshow on smaller screens */
+  }
 }
 
 .events img {
-  width: 400px;
-  height: 300px;
+  width: calc(33.333% - 20px); /* Adjust width for 3 images per row */
+  height: auto; /* Maintain aspect ratio */
   object-fit: cover;
   border-radius: 3px;
-
-  display: block;
-  aspect-ratio: 1 / 1;
 }
+
+@media (max-width: 768px) {
+  .events img {
+      width: calc(50% - 10px); /* 2 images per row on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .events img {
+      width: calc(50% - 10px); /* Still 2 images per row on extra small screens */
+  }
+}
+
+
+
+
+/*=============== Contact Us ===============*/
+.contact-section {
+  background-color: #1a2d7a; /* Dark blue background */
+  color: white;
+  padding: 80px;
+  text-align: center;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.contact-section h1 {
+  margin: 0;
+  font-size: 2.7rem;
+}
+
+.contact-section p {
+  margin: 15px 0;
+  font-size: 1rem;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
+}
+
+/* Contact info layout for larger screens */
+@media (min-width: 768px) {
+  .contact-info {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .contact-info p {
+    width: auto;
+    flex: 1;
+    text-align: left;
+  }
+}
+
+/* Icons for contact info */
+.contact-info p::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.contact-info p:first-child::before {
+  background-image: url("../img/tel_img.png");
+}
+
+.contact-info p:nth-child(2)::before {
+  background-image: url("../img/email_img.png");
+}
+
+.contact-info p:last-child::before {
+  background-image: url("../img/location_img.png");
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .contact-section h1 {
+    font-size: 2rem;
+  }
+
+  .contact-info p {
+    font-size: 1rem;
+    text-align: center;
+    margin: 10px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-section {
+    padding: 40px;
+  }
+
+  .contact-section h1 {
+    font-size: 1.8rem;
+  }
+
+  .contact-section p {
+    font-size: 0.9rem;
+  }
+
+  .contact-info p {
+    font-size: 0.8rem;
+  }
+}
+
 
 /*================Footer====================*/
 
