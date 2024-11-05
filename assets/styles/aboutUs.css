@@ -63,7 +63,7 @@ button {
 }
 
 body {
-  background-color: rgb(255, 253, 254);
+  background-color: rgb(220, 217, 250);
   color: var(--text-color);
 }
 
@@ -142,6 +142,72 @@ img {
   color: var(--first-color);
 }
 
+/* Existing CSS from your provided code */
+
+/* Mobile navigation */
+@media screen and (max-width: 1023px) {
+  .nav__menu {
+    position: fixed;
+    top: -100%;
+    left: 0;
+    background-color: var(--body-color);
+    box-shadow: 0 8px 16px hsla(230, 75%, 32%, 0.15);
+    width: 100%;
+    padding-block: 4.5rem 4rem;
+    transition: top 0.4s;
+    z-index: var(--z-fixed);
+  }
+
+  .nav__menu.active {
+    top: 0;
+  }
+
+  .nav__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2.5rem;
+    text-align: center;
+  }
+
+  .nav__toggle {
+    display: block;
+    cursor: pointer;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .nav__menu {
+    top: initial;
+    position: static;
+    box-shadow: none;
+    padding-block: 0;
+    transition: none;
+  }
+
+  .nav__list {
+    flex-direction: row;
+    column-gap: 2rem;
+  }
+
+  .nav__toggle {
+    display: none;
+  }
+}
+
+/* Hide toggle button and show close icon when active */
+.nav__toggle .close-icon {
+  display: none;
+}
+
+.nav__menu.active ~ .nav__toggle .close-icon {
+  display: block;
+}
+
+.nav__menu.active ~ .nav__toggle .toggle-icon {
+  display: none;
+}
+
+
 /*============= MAIN CONTENT ===========*/
 .content {
   font-family: "Poppins", "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
@@ -202,41 +268,48 @@ img {
   background-color: #1a2d7a; /* Dark blue background */
   color: white;
   padding: 80px;
-  text-align: left;
+  text-align: center;
+  max-width: 100%;
+  box-sizing: border-box;
 }
+
 .contact-section h1 {
   margin: 0;
   font-size: 2.7rem;
 }
+
 .contact-section p {
   margin: 15px 0;
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
+
 .contact-info {
-  margin: 10px 0;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
 }
 
-.contact-info p:first-child {
-  width: 30%;
+/* Contact info layout for larger screens */
+@media (min-width: 768px) {
+  .contact-info {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .contact-info p {
+    width: auto;
+    flex: 1;
+    text-align: left;
+  }
 }
 
-.contact-info p:nth-child(2) {
-  width: 40%;
-}
-
-.contact-info p:last-child {
-  width: 30%;
-}
-
-/*Icons for contact us*/
-
+/* Icons for contact info */
 .contact-info p::before {
   content: "";
   width: 20px;
   height: 20px;
-  margin-right: 5px;
+  margin-right: 10px;
   background-size: contain;
   background-repeat: no-repeat;
   display: inline-block;
@@ -253,6 +326,37 @@ img {
 
 .contact-info p:last-child::before {
   background-image: url("../img/location_img.png");
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .contact-section h1 {
+    font-size: 2rem;
+  }
+
+  .contact-info p {
+    font-size: 1rem;
+    text-align: center;
+    margin: 10px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-section {
+    padding: 40px;
+  }
+
+  .contact-section h1 {
+    font-size: 1.8rem;
+  }
+
+  .contact-section p {
+    font-size: 0.9rem;
+  }
+
+  .contact-info p {
+    font-size: 0.8rem;
+  }
 }
 
  /*================Footer====================*/
