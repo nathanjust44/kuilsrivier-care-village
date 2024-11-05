@@ -16,7 +16,7 @@ body {
   line-height: 1.6;
 }
 
-/*=============== NewsFeed  ===============*/
+/*=============== News Feed Styling ===============*/
 
 .news-feed {
   max-width: 1200px;
@@ -29,22 +29,28 @@ body {
   font-size: 2rem;
   margin-bottom: 20px;
   color: #000;
+  text-align: center;
+  padding-top: 40px;
 }
 
 .news-cards {
   display: flex;
   gap: 20px;
   justify-content: space-between;
+  flex-wrap: wrap; /* Makes the cards wrap to the next line on smaller screens */
 }
 
+/* News Card Styling */
 .news-card {
-  background-color: #fff;
+  background-color: #003366; /* Set the desired background color here */
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   text-decoration: none;
   color: inherit;
-  flex: 1;
+  flex: 1; /* Allow cards to grow equally */
+  min-width: 300px; /* Ensures each card has a minimum width */
+  max-width: 350px; /* Limits maximum width to control size on larger screens */
   display: flex;
   flex-direction: column;
 }
@@ -57,12 +63,11 @@ body {
 
 .news-card-content {
   padding: 20px;
+  flex-grow: 1; /* Make content fill the remaining space */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: #003366;
-  color: white;
-  flex-grow: 1;
+  color: white; /* Text color */
 }
 
 .news-card-content h2 {
@@ -72,12 +77,25 @@ body {
 
 .news-card-content p {
   flex-grow: 1;
+  margin: 0; /* Removes default margin for consistent spacing */
 }
 
 .author {
   margin-top: 10px;
   font-size: 0.875rem;
   color: #ccc;
+}
+
+/* Centering cards on smaller devices */
+@media (max-width: 768px) {
+  .news-cards {
+    justify-content: center; /* Center cards on smaller screens */
+  }
+
+  .news-card {
+    min-width: 250px; /* Optional: Adjust minimum width for smaller devices */
+    max-width: 90%; /* Allow cards to take up most of the width */
+  }
 }
 
 /*=============== Events  ===============*/
@@ -118,43 +136,183 @@ body {
   color: #000;
 }
 
-/*=============== Volunteer  ===============*/
+/*=============== Volunteer ===============*/
 
 .volunteer-container {
   background-image: url("../img/volunteering.png");
   background-size: cover;
   background-position: center;
-  color: rgb(255, 255, 255);
+  color: #ffffff;
   padding: 90px;
   background-color: #161e3a;
-  position: relative;
   margin-top: 0;
+  text-align: center;
+  box-sizing: border-box;
 }
 
 .volunteer-container h1 {
   font-size: 2.5rem;
-  padding-left: 1rem;
+  margin-bottom: 30px;
 }
 
 .volunteers {
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
 }
 
+/* Volunteer card styling */
 .volunteer-card {
-  width: calc(33.333% - (50px / 3));
+  width: 100%;
+  max-width: 350px;
   padding: 20px;
   border-radius: 10px;
-  margin-top: 20px;
   background-color: #1a2d7a;
   border: #687194 solid 1px;
 }
 
+/* Two-column layout for medium screens and above */
+@media (min-width: 768px) {
+  .volunteers {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .volunteer-card {
+    width: calc(50% - 20px);
+  }
+}
+
+/* Three-column layout for large screens */
+@media (min-width: 1024px) {
+  .volunteer-card {
+    width: calc(33.333% - 20px);
+  }
+}
+
+/* Volunteer card header styling */
 .activity-assistants h2,
 .meal-delivery-drivers h2,
 .gardening-helpers h2 {
-  color: white;
+  color: #ffffff;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
 }
+
+/* Adjustments for smaller screens */
+@media (max-width: 480px) {
+  .volunteer-container {
+    padding: 40px;
+  }
+
+  .volunteer-container h1 {
+    font-size: 2rem;
+  }
+
+  .volunteer-card p {
+    font-size: 0.9rem;
+  }
+}
+
+
+/*=============== Contact Us ===============*/
+.contact-section {
+  background-color: #1a2d7a; /* Dark blue background */
+  color: white;
+  padding: 80px;
+  text-align: center;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.contact-section h1 {
+  margin: 0;
+  font-size: 2.7rem;
+}
+
+.contact-section p {
+  margin: 15px 0;
+  font-size: 1rem;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
+}
+
+/* Contact info layout for larger screens */
+@media (min-width: 768px) {
+  .contact-info {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .contact-info p {
+    width: auto;
+    flex: 1;
+    text-align: left;
+  }
+}
+
+/* Icons for contact info */
+.contact-info p::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.contact-info p:first-child::before {
+  background-image: url("../img/tel_img.png");
+}
+
+.contact-info p:nth-child(2)::before {
+  background-image: url("../img/email_img.png");
+}
+
+.contact-info p:last-child::before {
+  background-image: url("../img/location_img.png");
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .contact-section h1 {
+    font-size: 2rem;
+  }
+
+  .contact-info p {
+    font-size: 1rem;
+    text-align: center;
+    margin: 10px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-section {
+    padding: 40px;
+  }
+
+  .contact-section h1 {
+    font-size: 1.8rem;
+  }
+
+  .contact-section p {
+    font-size: 0.9rem;
+  }
+
+  .contact-info p {
+    font-size: 0.8rem;
+  }
+}
+
 
 /*================Footer====================*/
 
