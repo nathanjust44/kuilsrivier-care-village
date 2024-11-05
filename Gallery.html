@@ -11,44 +11,38 @@
     <title>Gallery</title>
     <link rel="shortcut icon" href="assets/img/Logo.png" type="image/png"><link rel="shortcut icon" href="assets/img/Logo.png" type="image/png">
 	<link rel="stylesheet" href="assets/styles/galleryStyle.css">
+    <script src="assets/scripts/script.js"></script>
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
 </head>
 <body>
     <!--==================== HEADER ====================-->
-   <header class="header" id="header">
+<header class="header" id="header">
     <nav class="nav container">
-       <a href="index.html" class="nav__logo">
-          <img src="assets/img/Logo.png" alt="Logo">
-       </a>
-
-       <div class="nav__menu" id="nav-menu">
-          <ul class="nav__list">
-             <li class="nav__item">
-                <a href="index.html" class="nav__link">Home</a>
-             </li>
-
-             <li class="nav__item">
-                <a href="aboutUs.html" class="nav__link">About Us</a>
-             </li>
-
-             <li class="nav__item">
-                <a href="Gallery.html" class="nav__link">Gallery</a>
-             </li>
-
-             <li class="nav__item">
-                <a href="News.html" class="nav__link">News</a>
-             </li>
-
-			 <li class="nav__item">
-                <a href="Forms.html" class="nav__link">Applications</a>
-             </li>
-
-             <li class="nav__item">
-                <a href="contactUs.html" class="nav__link">Contact Us</a>
-             </li>
-          </ul>
+      <a href="#" class="nav__logo">
+        <img src="assets/img/Logo.png" alt="Logo">
+      </a>
+      
+      <!-- Navigation Toggle Button -->
+     <div id="nav-toggle" class="nav__toggle">
+       <span class="toggle-icon">☰</span>
+       <span class="toggle-icon close-icon" style="display: none;">✖</span>
+     </div>
+  
+      <div class="nav__menu" id="nav-menu">
+        <ul class="nav__list">
+          <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
+          <li class="nav__item"><a href="aboutUs.html" class="nav__link">About Us</a></li>
+          <li class="nav__item"><a href="Gallery.html" class="nav__link">Gallery</a></li>
+          <li class="nav__item"><a href="News.html" class="nav__link">News</a></li>
+          <li class="nav__item"><a href="Forms.html" class="nav__link">Applications</a></li>
+          <li class="nav__item"><a href="contactUs.html" class="nav__link">Contact Us</a></li>
+        </ul>
+      </div>
     </nav>
- </header>
-
+  </header>
 
  <!--======================Gallery==========================-->
 <div class="container content">
@@ -57,7 +51,7 @@
             <li>
                 <a href="https://www.facebook.com/kuilsrivercarevillage">
                     <figure class="figure">
-                        <img src='assets/img/Gallery/Birthday selfie.jpeg' alt='Volcano and lava field against a stormy sky'>
+                        <img src='assets/img/Gallery/Birthday selfie.jpeg' alt='Birthday selfie'>
                         <figcaption>Event</figcaption>
                     </figure>
                 </a>
@@ -65,7 +59,7 @@
             <li>
                 <a href="https://www.facebook.com/kuilsrivercarevillage">
                     <figure class="figure">
-                        <img src='assets/img/Gallery/Birthday.jpeg' alt='Guy on a bike on a wooden bridge with a forest backdrop'>
+                        <img src='assets/img/Gallery/Birthday.jpeg' alt='Birthday celebration'>
                         <figcaption>Birthday's</figcaption>
                     </figure>
                 </a>
@@ -73,7 +67,7 @@
             <li>
                 <a href="https://www.facebook.com/kuilsrivercarevillage">
                     <figure class="figure">
-                        <img src='assets/img/Gallery/Church.jpeg' alt='Person standing alone in a misty forest'>
+                        <img src='assets/img/Gallery/Church.jpeg' alt='Church Services'>
                         <figcaption>Church Services</figcaption>
                     </figure>
                 </a>
@@ -81,7 +75,7 @@
             <li>
                 <a href="https://www.facebook.com/kuilsrivercarevillage">
                     <figure class="figure">
-                        <img src='assets/img/Gallery/Events.jpeg' alt='Person hiking on a trail through mountains while taking a photo with phone'>
+                        <img src='assets/img/Gallery/Events.jpeg' alt='Residents'>
                         <figcaption>Residents</figcaption>
                     </figure>
                 </a>
@@ -89,7 +83,7 @@
             <li>
                 <a href="https://www.facebook.com/kuilsrivercarevillage">
                     <figure class="figure">
-                        <img src='assets/img/Gallery/Events 3.jpeg' alt='Street scene with person walking and others on motorbikes, all wearing masks'>
+                        <img src='assets/img/Gallery/Events 3.jpeg' alt='Sponsors'>
                         <figcaption>Sponsors</figcaption>
                     </figure>
                 </a>
@@ -97,7 +91,7 @@
             <li>
                 <a href="https://www.facebook.com/kuilsrivercarevillage">
                     <figure class="figure">
-                        <img src='assets/img/Gallery/Events 2.jpeg' alt='Fashionable-looking girl with blond hair and pink sunglasses'>
+                        <img src='assets/img/Gallery/Events 2.jpeg' alt='Staff'>
                         <figcaption>Staff</figcaption>
                     </figure>
                 </a>
@@ -107,53 +101,81 @@
 </div>
 
 
- <!--======================Gallery==========================-->
-	<div class="facilities">
-		<h1>Our Facilities</h1>
-		<div class="facility">
-			<img src="assets/img/outside.webp" alt="Serenity Gardens">
-			<h2>Serenity Gardens</h2>
-			<p>Take a peaceful stroll in our beautifully landscaped gardens.</p>
-		</div>
-		<div class="facility">
-			<img src="assets/img/Gallery/5.jpeg" alt="Dining Hall Delights">
-			<h2>Dining Hall Delights</h2>
-			<p>Enjoy delicious and nutritious meals in our welcoming dining area.</p>
-		</div>
-		<div class="facility">
-			<img src="assets/img/Gallery/Bedding.jpeg" alt="Fitness Center">
-			<h2>Bedding</h2>
-			<p>Rooms where the Residents are able to sleep and havin resting time.</p>
-		</div>
-	</div>
+ <!--====================== Gallery ==========================-->
+<div class="facilities">
+    <h1>Our Facilities</h1>
+    <div class="facility-container">
+        <div class="facility">
+            <img src="assets/img/New folder/1.jpg" alt="Serenity Gardens">
+            <h2>Cozy Cottage</h2>
+            <p>Welcome to our cozy and well-maintained living spaces, where comfort meets community. Our housing area offers a safe and peaceful environment for residents, complete with beautiful gardens and outdoor spaces to enjoy fresh air and natural beauty.</p>
+        </div>
+        <div class="facility">
+            <img src="assets/img/Gallery/16.jpeg" alt="Dining Hall Delights">
+            <h2>Restful Retreats</h2>
+            <p>Our rooms are designed to provide a warm and inviting atmosphere for residents to rest and feel at ease. Each space is thoughtfully arranged to ensure a cozy, private sanctuary, promoting relaxation and a sense of belonging</p>
+        </div>
+        <div class="facility">
+            <img src="assets/img/Gallery/42.jpeg" alt="Bedding">
+            <h2>Library & Reading Room</h2>
+            <p>Our rooms are designed to provide a warm and inviting atmosphere for residents to rest and feel at ease. Each space is thoughtfully arranged to ensure a cozy, private sanctuary, promoting relaxation and a sense of belonging.</p>
+        </div>
+    </div>
+</div>
 
  <!--======================Events==========================-->
-
 <div class="events-section">
-	<h1>Events</h1>
-	<div class="events">
-		<img src="assets/img/Gallery/1.jpeg" alt="Event 1">
-		<img src="assets/img/Gallery/2.jpeg" alt="Event 2">
-		<img src="assets/img/Gallery/3.jpg" alt="Event 3">
-		
-	</div>
+    <h1>Events</h1>
 
-    <div class="events">
-		<img src="assets/img/Gallery/11.jpeg" alt="Event 1">
-		<img src="assets/img/Gallery/10.jpeg" alt="Event 2">
-		<img src="assets/img/Gallery/7.jpeg" alt="Event 3">
-		
-	</div>
+    <!-- Slideshow for mobile devices -->
+    <div class="slideshow-container">
 
+        <div class="mySlides fade">
+            <img src="assets/img/Gallery/1.jpeg" alt="Event 1">
+        </div>
+        <div class="mySlides fade">
+            <img src="assets/img/Gallery/2.jpeg" alt="Event 2">
+        </div>
+        <div class="mySlides fade">
+            <img src="assets/img/Gallery/3.jpg" alt="Event 3">
+        </div>
+        <div class="mySlides fade">
+            <img src="assets/img/Gallery/11.jpeg" alt="Event 1">
+        </div>
+        <div class="mySlides fade">
+            <img src="assets/img/Gallery/10.jpeg" alt="Event 2">
+        </div>
+        <div class="mySlides fade">
+            <img src="assets/img/Gallery/7.jpeg" alt="Event 3">
+        </div>
+        <div class="mySlides fade">
+            <img src="assets/img/Gallery/13.jpeg" alt="Event 1">
+        </div>
+        <div class="mySlides fade">
+            <img src="assets/img/Gallery/6.jpeg" alt="Event 2">
+        </div>
+        <div class="mySlides fade">
+            <img src="assets/img/Gallery/15.jpeg" alt="Event 3">
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+
+    <!-- Grid layout for larger devices -->
     <div class="events">
-		<img src="assets/img/Gallery/13.jpeg" alt="Event 1">
-		<img src="assets/img/Gallery/6.jpeg" alt="Event 2">
-		<img src="assets/img/Gallery/15.jpeg" alt="Event 3">
-		
-	</div>
-	
-  
+        <img src="assets/img/Gallery/1.jpeg" alt="Event 1">
+        <img src="assets/img/Gallery/2.jpeg" alt="Event 2">
+        <img src="assets/img/Gallery/3.jpg" alt="Event 3">
+        <img src="assets/img/Gallery/11.jpeg" alt="Event 1">
+        <img src="assets/img/Gallery/10.jpeg" alt="Event 2">
+        <img src="assets/img/Gallery/7.jpeg" alt="Event 3">
+        <img src="assets/img/Gallery/13.jpeg" alt="Event 1">
+        <img src="assets/img/Gallery/6.jpeg" alt="Event 2">
+        <img src="assets/img/Gallery/15.jpeg" alt="Event 3">
+    </div>
 </div>
+
 
 <!--==================== Contact US ====================-->
 
