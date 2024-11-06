@@ -244,6 +244,7 @@ img {
 @media screen and (max-width: 768px) {
   .nav {
     padding: 0 0.5rem; /* Reduce padding on smaller screens */
+    padding-top: 1.9cm;
   }
 }
 
@@ -356,6 +357,7 @@ img {
 @media (max-width: 480px) {
   .content-left-side h1 {
     font-size: 2rem; /* Smaller font size for even smaller screens */
+    padding-top: 2cm;
   }
 
   .content-left-side p {
@@ -447,7 +449,7 @@ img {
   width: 50px; /* Set width */
   height: 50px; /* Set height */
   background-color: #1a2d7a;
-  border-radius: 6px; /* Default border-radius */
+  border-radius: 8px; /* Default border-radius */
   display: flex;
   justify-content: center;
   align-items: center;
