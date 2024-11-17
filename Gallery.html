@@ -4,197 +4,224 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/styles/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/styles/galleryStyle.css" />
+    <link rel="shortcut icon" href="assets/img/Logo.png" type="image/png" />
     <title>Gallery</title>
-    <link rel="shortcut icon" href="assets/img/Logo.png" type="image/png"><link rel="shortcut icon" href="assets/img/Logo.png" type="image/png">
-	<link rel="stylesheet" href="assets/styles/galleryStyle.css">
     <script src="assets/scripts/script.js"></script>
-
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-
-</head>
-<body>
+  </head>
+  <body>
     <!--==================== HEADER ====================-->
-<header class="header" id="header">
-    <nav class="nav container">
-      <a href="#" class="nav__logo">
-        <img src="assets/img/Logo.png" alt="Logo">
-      </a>
-      
-      <!-- Navigation Toggle Button -->
-     <div id="nav-toggle" class="nav__toggle">
-       <span class="toggle-icon">☰</span>
-       <span class="toggle-icon close-icon" style="display: none;">✖</span>
-     </div>
-  
-      <div class="nav__menu" id="nav-menu">
-        <ul class="nav__list">
-          <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
-          <li class="nav__item"><a href="aboutUs.html" class="nav__link">About Us</a></li>
-          <li class="nav__item"><a href="Gallery.html" class="nav__link">Gallery</a></li>
-          <li class="nav__item"><a href="News.html" class="nav__link">News</a></li>
-          <li class="nav__item"><a href="Forms.html" class="nav__link">Applications</a></li>
-          <li class="nav__item"><a href="contactUs.html" class="nav__link">Contact Us</a></li>
+    <header class="header" id="header">
+      <nav class="nav container">
+        <a href="index.html" class="nav__logo">
+          <img src="assets/img/Logo.png" alt="Logo" />
+        </a>
+
+        <button
+          class="nav__toggle"
+          id="nav-toggle"
+          aria-label="Toggle navigation"
+        >
+          <span class="nav__toggle-icon"></span>
+        </button>
+
+        <div class="nav__menu" id="nav-menu">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a href="index.html" class="nav__link">Home</a>
+            </li>
+            <li class="nav__item">
+              <a href="aboutUs.html" class="nav__link">About Us</a>
+            </li>
+            <li class="nav__item">
+              <a href="Gallery.html" class="nav__link">Gallery</a>
+            </li>
+            <li class="nav__item">
+              <a href="News.html" class="nav__link">News</a>
+            </li>
+            <li class="nav__item">
+              <a href="Forms.html" class="nav__link">Applications</a>
+            </li>
+            <li class="nav__item">
+              <a href="contactUs.html" class="nav__link">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <!--======================Gallery==========================-->
+    <div class="container content">
+      <div class="content-left-side">
+        <ul class="gallery">
+          <li>
+            <a href="https://www.facebook.com/kuilsrivercarevillage">
+              <figure class="figure">
+                <img
+                  src="assets/img/Gallery/Birthday selfie.jpeg"
+                  alt="Birthday selfie"
+                />
+                <figcaption>Event</figcaption>
+              </figure>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.facebook.com/kuilsrivercarevillage">
+              <figure class="figure">
+                <img
+                  src="assets/img/Gallery/Birthday.jpeg"
+                  alt="Birthday celebration"
+                />
+                <figcaption>Birthday's</figcaption>
+              </figure>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.facebook.com/kuilsrivercarevillage">
+              <figure class="figure">
+                <img
+                  src="assets/img/Gallery/Church.jpeg"
+                  alt="Church Services"
+                />
+                <figcaption>Church Services</figcaption>
+              </figure>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.facebook.com/kuilsrivercarevillage">
+              <figure class="figure">
+                <img src="assets/img/Gallery/Events.jpeg" alt="Residents" />
+                <figcaption>Residents</figcaption>
+              </figure>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.facebook.com/kuilsrivercarevillage">
+              <figure class="figure">
+                <img src="assets/img/Gallery/Events 3.jpeg" alt="Sponsors" />
+                <figcaption>Sponsors</figcaption>
+              </figure>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.facebook.com/kuilsrivercarevillage">
+              <figure class="figure">
+                <img src="assets/img/Gallery/Events 2.jpeg" alt="Staff" />
+                <figcaption>Staff</figcaption>
+              </figure>
+            </a>
+          </li>
         </ul>
       </div>
-    </nav>
-  </header>
-
- <!--======================Gallery==========================-->
-<div class="container content">
-    <div class="content-left-side">
-        <ul class="gallery">
-            <li>
-                <a href="https://www.facebook.com/kuilsrivercarevillage">
-                    <figure class="figure">
-                        <img src='assets/img/Gallery/Birthday selfie.jpeg' alt='Birthday selfie'>
-                        <figcaption>Event</figcaption>
-                    </figure>
-                </a>
-            </li>
-            <li>
-                <a href="https://www.facebook.com/kuilsrivercarevillage">
-                    <figure class="figure">
-                        <img src='assets/img/Gallery/Birthday.jpeg' alt='Birthday celebration'>
-                        <figcaption>Birthday's</figcaption>
-                    </figure>
-                </a>
-            </li>
-            <li>
-                <a href="https://www.facebook.com/kuilsrivercarevillage">
-                    <figure class="figure">
-                        <img src='assets/img/Gallery/Church.jpeg' alt='Church Services'>
-                        <figcaption>Church Services</figcaption>
-                    </figure>
-                </a>
-            </li>
-            <li>
-                <a href="https://www.facebook.com/kuilsrivercarevillage">
-                    <figure class="figure">
-                        <img src='assets/img/Gallery/Events.jpeg' alt='Residents'>
-                        <figcaption>Residents</figcaption>
-                    </figure>
-                </a>
-            </li>
-            <li>
-                <a href="https://www.facebook.com/kuilsrivercarevillage">
-                    <figure class="figure">
-                        <img src='assets/img/Gallery/Events 3.jpeg' alt='Sponsors'>
-                        <figcaption>Sponsors</figcaption>
-                    </figure>
-                </a>
-            </li>
-            <li>
-                <a href="https://www.facebook.com/kuilsrivercarevillage">
-                    <figure class="figure">
-                        <img src='assets/img/Gallery/Events 2.jpeg' alt='Staff'>
-                        <figcaption>Staff</figcaption>
-                    </figure>
-                </a>
-            </li>
-        </ul>
     </div>
-</div>
 
-
- <!--====================== Gallery ==========================-->
-<div class="facilities">
-    <h1>Our Facilities</h1>
-    <div class="facility-container">
+    <!--====================== Gallery ==========================-->
+    <div class="facilities">
+      <h1>Our Facilities</h1>
+      <div class="facility-container">
         <div class="facility">
-            <img src="assets/img/New folder/1.jpg" alt="Serenity Gardens">
-            <h2>Cozy Cottage</h2>
-            <p>Welcome to our cozy and well-maintained living spaces, where comfort meets community. Our housing area offers a safe and peaceful environment for residents, complete with beautiful gardens and outdoor spaces to enjoy fresh air and natural beauty.</p>
+          <img src="assets/img/New folder/1.jpg" alt="Serenity Gardens" />
+          <h2>Cozy Cottage</h2>
+          <p>
+            Welcome to our cozy and well-maintained living spaces, where comfort
+            meets community. Our housing area offers a safe and peaceful
+            environment for residents, complete with beautiful gardens and
+            outdoor spaces to enjoy fresh air and natural beauty.
+          </p>
         </div>
         <div class="facility">
-            <img src="assets/img/Gallery/16.jpeg" alt="Dining Hall Delights">
-            <h2>Restful Retreats</h2>
-            <p>Our rooms are designed to provide a warm and inviting atmosphere for residents to rest and feel at ease. Each space is thoughtfully arranged to ensure a cozy, private sanctuary, promoting relaxation and a sense of belonging</p>
+          <img src="assets/img/Gallery/16.jpeg" alt="Dining Hall Delights" />
+          <h2>Restful Retreats</h2>
+          <p>
+            Our rooms are designed to provide a warm and inviting atmosphere for
+            residents to rest and feel at ease. Each space is thoughtfully
+            arranged to ensure a cozy, private sanctuary, promoting relaxation
+            and a sense of belonging
+          </p>
         </div>
         <div class="facility">
-            <img src="assets/img/Gallery/42.jpeg" alt="Bedding">
-            <h2>Library & Reading Room</h2>
-            <p>Our rooms are designed to provide a warm and inviting atmosphere for residents to rest and feel at ease. Each space is thoughtfully arranged to ensure a cozy, private sanctuary, promoting relaxation and a sense of belonging.</p>
+          <img src="assets/img/Gallery/42.jpeg" alt="Bedding" />
+          <h2>Library & Reading Room</h2>
+          <p>
+            Our rooms are designed to provide a warm and inviting atmosphere for
+            residents to rest and feel at ease. Each space is thoughtfully
+            arranged to ensure a cozy, private sanctuary, promoting relaxation
+            and a sense of belonging.
+          </p>
         </div>
-    </div>
-</div>
-
- <!--======================Events==========================-->
-<div class="events-section">
-    <h1>Events</h1>
-
-    <!-- Slideshow for mobile devices -->
-    <div class="slideshow-container">
-
-        <div class="mySlides fade">
-            <img src="assets/img/Gallery/1.jpeg" alt="Event 1">
-        </div>
-        <div class="mySlides fade">
-            <img src="assets/img/Gallery/2.jpeg" alt="Event 2">
-        </div>
-        <div class="mySlides fade">
-            <img src="assets/img/Gallery/3.jpg" alt="Event 3">
-        </div>
-        <div class="mySlides fade">
-            <img src="assets/img/Gallery/11.jpeg" alt="Event 1">
-        </div>
-        <div class="mySlides fade">
-            <img src="assets/img/Gallery/10.jpeg" alt="Event 2">
-        </div>
-        <div class="mySlides fade">
-            <img src="assets/img/Gallery/7.jpeg" alt="Event 3">
-        </div>
-        <div class="mySlides fade">
-            <img src="assets/img/Gallery/13.jpeg" alt="Event 1">
-        </div>
-        <div class="mySlides fade">
-            <img src="assets/img/Gallery/6.jpeg" alt="Event 2">
-        </div>
-        <div class="mySlides fade">
-            <img src="assets/img/Gallery/15.jpeg" alt="Event 3">
-        </div>
-
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+      </div>
     </div>
 
-    <!-- Grid layout for larger devices -->
-    <div class="events">
-        <img src="assets/img/Gallery/1.jpeg" alt="Event 1">
-        <img src="assets/img/Gallery/2.jpeg" alt="Event 2">
-        <img src="assets/img/Gallery/3.jpg" alt="Event 3">
-        <img src="assets/img/Gallery/11.jpeg" alt="Event 1">
-        <img src="assets/img/Gallery/10.jpeg" alt="Event 2">
-        <img src="assets/img/Gallery/7.jpeg" alt="Event 3">
-        <img src="assets/img/Gallery/13.jpeg" alt="Event 1">
-        <img src="assets/img/Gallery/6.jpeg" alt="Event 2">
-        <img src="assets/img/Gallery/15.jpeg" alt="Event 3">
+    <!--======================Events==========================-->
+    <div class="events-section">
+      <h1>Events</h1>
+
+      <!-- Slideshow for mobile devices -->
+      <div class="slideshow-container">
+        <div class="mySlides fade">
+          <img src="assets/img/Gallery/1.jpeg" alt="Event 1" />
+        </div>
+        <div class="mySlides fade">
+          <img src="assets/img/Gallery/2.jpeg" alt="Event 2" />
+        </div>
+        <div class="mySlides fade">
+          <img src="assets/img/Gallery/3.jpg" alt="Event 3" />
+        </div>
+        <div class="mySlides fade">
+          <img src="assets/img/Gallery/11.jpeg" alt="Event 1" />
+        </div>
+        <div class="mySlides fade">
+          <img src="assets/img/Gallery/10.jpeg" alt="Event 2" />
+        </div>
+        <div class="mySlides fade">
+          <img src="assets/img/Gallery/7.jpeg" alt="Event 3" />
+        </div>
+        <div class="mySlides fade">
+          <img src="assets/img/Gallery/13.jpeg" alt="Event 1" />
+        </div>
+        <div class="mySlides fade">
+          <img src="assets/img/Gallery/6.jpeg" alt="Event 2" />
+        </div>
+        <div class="mySlides fade">
+          <img src="assets/img/Gallery/15.jpeg" alt="Event 3" />
+        </div>
+      </div>
+
+      <!-- Grid layout for larger devices -->
+      <div class="events">
+        <img src="assets/img/Gallery/1.jpeg" alt="Event 1" />
+        <img src="assets/img/Gallery/2.jpeg" alt="Event 2" />
+        <img src="assets/img/Gallery/3.jpg" alt="Event 3" />
+        <img src="assets/img/Gallery/11.jpeg" alt="Event 1" />
+        <img src="assets/img/Gallery/10.jpeg" alt="Event 2" />
+        <img src="assets/img/Gallery/7.jpeg" alt="Event 3" />
+        <img src="assets/img/Gallery/13.jpeg" alt="Event 1" />
+        <img src="assets/img/Gallery/6.jpeg" alt="Event 2" />
+        <img src="assets/img/Gallery/15.jpeg" alt="Event 3" />
+      </div>
     </div>
-</div>
 
+    <!--==================== Contact US ====================-->
 
-<!--==================== Contact US ====================-->
-
-<div class="contact-section">
-	<h1>Contact Us</h1>
-	<br>
-	<div class="get-in-touch">
-	  <h2>Get in Touch</h2> 
-	</div>
-	<p>Reach out to us for any inquiries or to schedule a visit.</p>
-	<br>
-	<div class="contact-info">
-	  <p>Tel: 021 903 4130</p>
-	  <p>Email: admin@agsthkuilsrivier.co.za</p>
-	  <p>Location: 17 Church Street Kuils Rivier 7580</p>
-	</div>
-  </div>
-  <footer>
-    <p>Copyright © 2024 Erinn Mouton & Nathan Just. All rights reserved.</p>
-</footer>
-</body>
+    <div class="contact-section">
+      <h1>Contact Us</h1>
+      <br />
+      <div class="get-in-touch">
+        <h2>Get in Touch</h2>
+      </div>
+      <p>Reach out to us for any inquiries or to schedule a visit.</p>
+      <br />
+      <div class="contact-info">
+        <p>Tel: 021 903 4130</p>
+        <p>Email: admin@agsthkuilsrivier.co.za</p>
+        <p>Location: 17 Church Street Kuils Rivier 7580</p>
+      </div>
+    </div>
+    <footer>
+      <p>Copyright © 2024 Erinn Mouton & Nathan Just. All rights reserved.</p>
+    </footer>
+  </body>
 </html>
