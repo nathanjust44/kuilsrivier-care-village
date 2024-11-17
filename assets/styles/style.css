@@ -130,7 +130,7 @@ img {
 
 .nav__logo img {
   max-width: 100%;
-  height: 70px;
+  height: 70px; /* Default height for the logo */
   width: auto;
   display: block;
 }
@@ -139,12 +139,92 @@ img {
   color: var(--first-color);
 }
 
+/* Hamburger menu styles */
+.nav__toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
 
+.nav__toggle-icon {
+  width: 25px;
+  height: 2px;
+  background-color: var(--title-color);
+  display: block;
+  position: relative;
+}
 
-/* Change logo size on smaller devices */
-@media screen and (max-width: 768px) {
+.nav__toggle-icon::before,
+.nav__toggle-icon::after {
+  content: "";
+  width: 25px;
+  height: 2px;
+  background-color: var(--title-color);
+  position: absolute;
+  left: 0;
+  transition: transform 0.3s ease;
+}
+
+.nav__toggle-icon::before {
+  top: -8px;
+}
+
+.nav__toggle-icon::after {
+  top: 8px;
+}
+
+/* Responsive menu visibility */
+.nav__menu {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.nav__menu.hidden {
+  display: none;
+}
+
+.nav__menu.show {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: var(--header-height);
+  right: 0;
+  background-color: var(--body-color);
+  width: 100%;
+  padding: 1rem;
+  box-shadow: 0 4px 8px hsla(0, 0%, 0%, 0.1);
+}
+
+@media (max-width: 768px) {
+  .nav__toggle {
+    display: block;
+    padding-right: 50px;
+  }
+
+  .nav__menu {
+    display: none; /* Hidden by default */
+  }
+
+  .nav__menu.show {
+    display: flex; /* Show when toggled */
+  }
+}
+
+/* Adjust size for tablets */
+@media (max-width: 768px) {
   .nav__logo img {
-    max-height: 50px; /* Adjust logo height on smaller devices */
+    height: 50px;
+    padding-left: 50px;
+  }
+}
+
+/* Adjust size for smaller devices like phones */
+@media (max-width: 480px) {
+  .nav__logo img {
+    height: 45px;
   }
 }
 
@@ -160,31 +240,13 @@ img {
     padding-block: 4.5rem 4rem;
     transition: top 0.4s;
   }
-
-  .nav__menu.active {
-    top: 0; /* Move menu down when active */
-  }
-
-  .nav__toggle {
-    display: flex; /* Show toggle button on smaller devices */
-    position: absolute; /* Position toggle button */
-    right: 1rem; /* Align to the right */
-    top: 1rem; /* Distance from the top */
-  }
 }
 
 .nav__list {
-  display: flex; /* Default to row for larger screens */
-  flex-direction: row; /* Default to row for larger screens */
-  gap: 2rem; /* Space between items */
-}
-
-/* Show the menu when active */
-.nav__menu.active {
-  display: flex; /* Show flex items */
-  flex-direction: column; /* Stack items vertically */
-  row-gap: 1rem; /* Space between items */
-  padding: 1rem 0; /* Padding around the menu */
+  display: flex;
+  flex-direction: column;
+  row-gap: 2.5rem;
+  text-align: center;
 }
 
 .nav__link {
@@ -193,62 +255,10 @@ img {
   transition: color 0.4s;
 }
 
-/* Toggle Button Styles */
-.nav__toggle {
-  cursor: pointer; /* Cursor changes to pointer */
-  display: none; /* Hide toggle button by default */
-}
-
-.toggle-icon {
-  font-size: 24px; /* Icon size */
-  transition: opacity 0.3s; /* Transition for smooth appearance */
-}
-
-.close-icon {
-  display: none; /* Hide close icon initially */
-}
-
-/* Show close icon when menu is active */
-.nav__menu.active + .nav__toggle .toggle-icon {
-  display: none; /* Hide the hamburger icon */
-}
-
-.nav__menu.active + .nav__toggle .close-icon {
-  display: block; /* Show the close icon */
-}
-
-/* Media query to ensure the nav menu stacks vertically */
-@media screen and (max-width: 1023px) {
-  .nav__list {
-    display: flex; /* Set display to flex */
-    flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Center items */
-    row-gap: 1rem; /* Space between items */
-  }
-
-  .nav__toggle {
-    display: flex; /* Show toggle button on smaller devices */
-  }
-
-  .nav__logo {
-    position: fixed; /* Keep logo fixed on the left */
-    left: 1rem; /* Ensure it stays in view */
-    top: 1rem; /* Distance from the top */
-  }
-}
-
-/* Responsive size adjustments */
-@media screen and (max-width: 768px) {
-  .nav {
-    padding: 0 0.5rem; /* Reduce padding on smaller screens */
-    padding-top: 1.9cm;
-  }
-}
-
-
 /*============= MAIN CONTENT ===========*/
 .content {
-  font-family: "Poppins", "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-family: "Poppins", "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+    sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -321,7 +331,7 @@ img {
   }
 
   .content-left-side {
-    margin: 0; /* Reset margin for better alignment */
+    align-items: center;
   }
 
   .content-right-side {
@@ -339,8 +349,8 @@ img {
   /* Adjust button container and button styles */
   .button-container {
     flex-direction: column; /* Stack buttons vertically on small screens */
-    align-items: center; /* Center align buttons */
     width: 100%; /* Full width on small screens */
+    align-items: center;
   }
 
   .button {
@@ -354,18 +364,13 @@ img {
 @media (max-width: 480px) {
   .content-left-side h1 {
     font-size: 2rem; /* Smaller font size for even smaller screens */
-    padding-top: 2cm;
+    text-align: center;
   }
 
   .content-left-side p {
     font-size: 0.9rem; /* Adjust font size */
   }
 }
-
-
-
-
-
 
 /*=========== About Us =================*/
 .aboutUs-container {
@@ -377,7 +382,7 @@ img {
 
 .container {
   display: flex;
-  flex-direction: column; /* Default to column layout */
+  /*flex-direction: column;  Default to column layout */
 }
 
 /* Right Side Styles */
@@ -453,6 +458,7 @@ img {
   color: white;
   font-size: 1.5rem;
   font-weight: bold;
+  padding: 20px;
 }
 
 .square-block span {
@@ -473,10 +479,6 @@ img {
 
 /* Responsive Adjustments */
 @media (min-width: 768px) {
-  .container {
-    flex-direction: row; /* Switch to row layout on larger screens */
-  }
-
   .aboutUs-left-side {
     margin-right: 20px; /* Add space between image and text */
   }
@@ -485,6 +487,11 @@ img {
   .values-content {
     margin-top: 0; /* Reset margin-top for larger screens */
   }
+
+  .aboutUs-left-side img {
+    width: 400px;
+    border-radius: 6px;
+  }
 }
 
 /* Adjustments for Smaller Devices */
@@ -492,7 +499,7 @@ img {
   .square-block {
     width: 50px; /* Keep width the same */
     height: 50px; /* Keep height the same */
-    border-radius: 80%; /* Make it circular */
+    padding: 20px;
   }
 
   /* Optional: Ensure that the vision and values sections can handle the circular blocks */
@@ -502,8 +509,6 @@ img {
     justify-content: center; /* Center content within the flex items */
   }
 }
-
-
 
 /*=============== Services ===============*/
 .service-container {
@@ -575,7 +580,6 @@ img {
   color: white;
 }
 
-
 /*==============FACILITIES====================*/
 
 .facilities-container {
@@ -605,8 +609,6 @@ img {
   transition: transform 0.3s ease; /* Smooth scaling effect */
 }
 
-
-
 .facilities-card img {
   width: 100%;
   max-width: 500px;
@@ -630,7 +632,6 @@ img {
     font-size: 2rem; /* Reduce title size for smaller screens */
   }
 }
-
 
 /*=============== Testimonial ===============*/
 .testimonial-container {
@@ -706,7 +707,7 @@ img {
 .faq-title {
   font-size: 2.5rem; /* Slightly reduced font size for better fit */
   margin: 2rem 0;
-  font-family: "Poppins", "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", ;
+  font-family: "Poppins", "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS";
 }
 
 .faq {
@@ -768,13 +769,11 @@ img {
   }
 }
 
-
 /*=============== Contact Us ===============*/
 .contact-section {
   background-color: #1a2d7a; /* Dark blue background */
   color: white;
   padding: 80px;
-  text-align: center;
   max-width: 100%;
   box-sizing: border-box;
 }
@@ -864,7 +863,6 @@ img {
     font-size: 0.8rem;
   }
 }
-
 
 /*================Footer====================*/
 
