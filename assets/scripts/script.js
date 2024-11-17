@@ -8,18 +8,23 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+  // Hamburger Menu Toggle
   const navToggle = document.getElementById('nav-toggle');
   const navMenu = document.getElementById('nav-menu');
 
-  navToggle.addEventListener('click', () => {
-    navMenu.classList.toggle('active'); // Toggles the 'active' class for the menu
-    const closeIcon = navToggle.querySelector('.close-icon');
-    const toggleIcon = navToggle.querySelector('.toggle-icon');
-
-    // Toggle visibility of the icons
-    closeIcon.style.display = navMenu.classList.contains('active') ? 'block' : 'none';
-    toggleIcon.style.display = navMenu.classList.contains('active') ? 'none' : 'block';
-  });
+  if (navToggle && navMenu) {
+    navToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('show'); // Toggles the 'show' class to display/hide menu
+      
+      // Manage icons inside the toggle button (optional)
+      const closeIcon = navToggle.querySelector('.close-icon');
+      const toggleIcon = navToggle.querySelector('.toggle-icon');
+      if (closeIcon && toggleIcon) {
+        closeIcon.style.display = navMenu.classList.contains('show') ? 'block' : 'none';
+        toggleIcon.style.display = navMenu.classList.contains('show') ? 'none' : 'block';
+      }
+    });
+  }
   
   // Slideshow functionality
   let slideIndex = 0;
