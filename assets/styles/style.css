@@ -120,35 +120,32 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 1rem; /* Add some horizontal padding */
 }
 
 .nav__logo {
   color: var(--title-color);
   font-weight: var(--font-semi-bold);
   transition: color 0.4s;
-  position: absolute; /* Fix the logo to a specific position */
-  left: 1rem; /* Align the logo to the left */
-  height: auto; /* Maintain original logo height on larger screens */
 }
 
 .nav__logo img {
-  max-width: 100%; /* Allow logo to scale */
-  height: auto; /* Maintain aspect ratio */
-  max-height: 70px; /* Set a maximum height for the logo on larger screens */
+  max-width: 100%;
+  height: 70px;
   width: auto;
   display: block;
 }
+
+:is(.nav__logo, .nav__search, .nav__login, .nav__toggle, .nav__link):hover {
+  color: var(--first-color);
+}
+
+
 
 /* Change logo size on smaller devices */
 @media screen and (max-width: 768px) {
   .nav__logo img {
     max-height: 50px; /* Adjust logo height on smaller devices */
   }
-}
-
-:is(.nav__logo, .nav__search, .nav__login, .nav__toggle, .nav__link):hover {
-  color: var(--first-color);
 }
 
 /* Navigation for mobile devices */
