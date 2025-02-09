@@ -172,6 +172,28 @@ body {
   border: #687194 solid 1px;
 }
 
+.newsButton {
+  background-color: #1a2d7a;
+  border: none;
+  border-radius: 7px;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  font-size: 16px;
+  font-weight: 500;
+  margin: 10px auto; /* Center horizontally */
+  cursor: pointer;
+  width: 250px;
+}
+
+.upcomingEventText {
+  color: black;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
 /* Two-column layout for medium screens and above */
 @media (min-width: 768px) {
   .volunteers {
